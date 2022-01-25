@@ -15,7 +15,7 @@ CREATE TABLE IF NOT EXISTS produtos(
   nome VARCHAR(50) NOT NULL,
   quantidade INTEGER NOT NULL,
   categoria VARCHAR(50),
-  preco REAL NOT NULL,
+  preco INTEGER NOT NULL,
   descricao VARCHAR(255),
   imagem TEXT,
   FOREIGN KEY (usuario_id) REFERENCES usuarios (id)
