@@ -4,7 +4,7 @@ const conexao = require('knex')({
       host : 'localhost',
       user : 'postgres',
       password : 'postgres',
-      database : 'cuboshop'
+      database : 'market_cubos'
     }
 });
 
