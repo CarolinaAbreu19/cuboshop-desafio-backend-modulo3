@@ -17,4 +17,4 @@ const validarUsuario = async (req, res) => {
         return res.status(400).json({ mensagem: "O campo nome_loja é obrigatório" });
     }
 }
-module.exports = validarUsuario;
+module.exports = {validarUsuario};
