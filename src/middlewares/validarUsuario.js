@@ -17,6 +17,6 @@ const validarUsuario = async (req) => {
         return "O campo nome_loja é obrigatório";
     }
 
-    return null;
+    return;
 }
 module.exports = validarUsuario;
