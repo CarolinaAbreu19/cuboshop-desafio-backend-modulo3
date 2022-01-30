@@ -1,20 +1,22 @@
-const validarUsuario = async (req, res) => {
+const validarUsuario = async (req) => {
     const { nome, email, senha, nome_loja } = req.body;
 
     if(!nome) {
-        return res.status(400).json({ mensagem: "O campo nome é obrigatório" });
-    }
-
+        return "O campo nome é obrigatório";
+    } 
+    
     if(!email) {
-        return res.status(400).json({ mensagem: "O campo email é obrigatório" });
+        return "O campo email é obrigatório";
     }
 
     if(!senha) {
-        return res.status(400).json({ mensagem: "O campo senha é obrigatório" });
+        return "O campo senha é obrigatório";
     }
 
     if(!nome_loja) {
-        return res.status(400).json({ mensagem: "O campo nome_loja é obrigatório" });
+        return "O campo nome_loja é obrigatório";
     }
+
+    return null;
 }
-module.exports = {validarUsuario};
+module.exports = validarUsuario;
