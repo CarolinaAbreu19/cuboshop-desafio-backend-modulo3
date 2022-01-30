@@ -1,16 +1,19 @@
-const { conexao } = require('../conexao');
+const conexao = require('../conexao');
 
-const validarEmail = async (req, res) => {
+const validarEmail = async (req) => {
     const { email } = req.body;
 
     try {
         const emailEncontrado = await conexao('usuarios').select('email').where({ email: email });
-        if(emailEncontrado) {
-            return res.status(400).json({ mensagem: "Já existe usuário cadastrado com o email informado" });
-        }
+        if(emailEncontrado.length > 0) {
+            return  "Já existe usuário cadastrado com o email informado";
+        } 
+        
+        return;
+
     } catch (error) {
-        return res.status(500).json(error);
+        return error;
     }
 }
 
-module.exports = {validarEmail};
+module.exports = validarEmail;
